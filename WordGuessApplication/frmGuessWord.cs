@@ -7,13 +7,11 @@ namespace WordGuessApplication
    
         private string wordToGuess = "REVERIE";
 
-        // StringBuilder for hidden word
         private StringBuilder revealedWord;
         public frmGuessWord()
         {
             InitializeComponent();
-
-         
+        
             revealedWord = new StringBuilder(new string('_', wordToGuess.Length));
             lblWord.Text = revealedWord.ToString();
         }
