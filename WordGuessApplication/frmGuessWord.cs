@@ -4,7 +4,7 @@ namespace WordGuessApplication
 {
     public partial class frmGuessWord : Form
     {
-        // The word to guess
+   
         private string wordToGuess = "REVERIE";
 
         // StringBuilder for hidden word
@@ -13,14 +13,14 @@ namespace WordGuessApplication
         {
             InitializeComponent();
 
-            // Initialize with underscores
+         
             revealedWord = new StringBuilder(new string('_', wordToGuess.Length));
             lblWord.Text = revealedWord.ToString();
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            string userGuess = txtGuess.Text.Trim(); // String class usage
+            string userGuess = txtGuess.Text.Trim(); 
 
             if (string.IsNullOrEmpty(userGuess))
             {
@@ -28,7 +28,7 @@ namespace WordGuessApplication
                 return;
             }
 
-            // Correct guess
+          
             if (userGuess.Equals(wordToGuess, StringComparison.OrdinalIgnoreCase))
             {
                 revealedWord.Clear();
@@ -41,7 +41,7 @@ namespace WordGuessApplication
             }
             else
             {
-                // Wrong guess → add to ListBox
+               
                 lstWrongGuesses.Items.Add(userGuess);
 
                 MessageBox.Show("Wrong guess! Try again.");
